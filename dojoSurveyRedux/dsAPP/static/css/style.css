@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    width: 970px;
+    margin: 0px auto;
+    padding-top: 175px;
+    
+    }
+
+.container {
+    margin: auto;
+    width: 50%;
+    padding: 20px 20px 20px 20px;
+    border-style: solid;
+    border-color: black;
+}
+
+h1, h2 {
+    padding: 0px 0px 10px 10px;
+}
+
+h1 {
+    text-decoration: underline;
+}
+
+.row {
+    padding: 0px 0px 10px 10px;
+    font-weight: bold;
+}
+
+#submit {
+    color: white;
+    background-color: grey;
+    padding: 5px 5px 5px 5px;
+    margin: 0px 0px 10px 10px;
+}
+
+p {
+    font-weight: bold;
+}
+
+textarea {
+    padding: 10px 10px 10px 10px;
+    border-width: 5px;
+    border-color: grey;
+}
+
+#back {
+    margin: 0px 0px 10px 10px;
+    padding-top: 20px;
+}
+

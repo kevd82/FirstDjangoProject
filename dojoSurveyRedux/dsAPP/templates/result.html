@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <h1>Submitted Info</h1>
+            <h2>Name: {{request.session.student}}</h2>
+            <h2>Dojo Location: {{request.session.location}}</h2>
+            <h2>Favorite Language: {{request.session.language}}</h2>
+            <h2>Comment: {{request.session.comment}}</h2>
+            <div id="back">
+                <form>
+                    <input type="button" value="Go back!" onclick="history.back()">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
