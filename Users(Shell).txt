@@ -1,0 +1,63 @@
+﻿Create 3 users
+(InteractiveConsole)
+>>> from SMOapp.models import *
+>>> User.objects.create(first_name = "Conan", last_name = "of Cimmeria", email_address = "Conan@gmail.com", age = 32)
+<User: Conan of Cimmeria>
+>>> User.objects.create(first_name = "Georgina", last_name = "the Hun", email_address = "Hun@gmail.com", age = 36)
+<User: Georgina the Hun>
+>>> User,objects.create(first_name = "Oron", last_name = "the Wolf", email_address = "Oron@gmail.com", age = 22)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'objects' is not defined
+>>> User.objects.create(first_name = "Oron", last_name = "the Wolf", email_address = "Oron@gmail.com", age = 22)
+<User: Oron the Wolf>
+>>>
+
+
+
+
+Retrieve all users
+>>> User.objects.all()
+<QuerySet [<User: Conan of Cimmeria>, <User: Georgina the Hun>, <User: Oron the Wolf>]>
+>>>
+
+
+Retrieve last user
+>>> User.objects.last()
+<User: Oron the Wolf>
+>>>
+
+
+Retrieve first user
+>>> User.objects.first()
+<User: Conan of Cimmeria>
+>>>
+
+
+Change user with ID=3 to have last name Pancakes
+>>> User.objects.get(id=3)
+<User: Oron the Wolf>
+>>> Oron = User.objects.get(id=3)
+>>> Oron.last_name = "Pancakes"
+>>> Oron.save()
+>>> User.objects.all()
+<QuerySet [<User: Conan of Cimmeria>, <User: Georgina the Hun>, <User: Oron Pancakes>]>
+>>>
+Delete user with id=2 from database
+>>> User.objects.get(id=2).delete()
+(1, {'SMOapp.User': 1})
+>>> User.objects.all()
+<QuerySet [<User: Conan of Cimmeria>, <User: Oron Pancakes>]>
+>>>
+
+
+Sort users by first name
+>>> User.objects.order_by("first_name")
+<QuerySet [<User: Conan of Cimmeria>, <User: Oron Pancakes>]>
+>>>
+
+
+Sort users by first name, in descending order
+>>> User.objects.order_by("-first_name")
+<QuerySet [<User: Oron Pancakes>, <User: Conan of Cimmeria>]>
+>>>
